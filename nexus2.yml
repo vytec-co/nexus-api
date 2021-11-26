@@ -1,17 +1,13 @@
 ---
 - hosts: local
   vars:
-    repositorieslist:
-    - url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
-      name: external
-      id: external
-    - url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
-      name: internal
-      id: internal
   tasks:
-  - name: Create a nexus apt repo
+  # - name: GET repo
+  #   uri:
+  #     url: http://localhost:8081/service/rest/v1/repositories
+  - name: Create a JIRA issue
     uri:
-      url: {{ item.url }}
+      url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
       method: POST
       user: admin
       password: admin123
@@ -21,7 +17,7 @@
       body: 
         mainlevel:
           subkey: finalvalue
-        name: "{{ item.name }}"
+        name: external
         online: true
         storage: 
           blobStoreName: default
@@ -40,4 +36,3 @@
       force_basic_auth: yes
       status_code: 201
       body_format: json
-    with_items: "{{ repositorieslist }}"
