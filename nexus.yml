@@ -14,7 +14,25 @@
       headers:
         Content-Type: application/json
         Accept: application/json
-      body: "{{ lookup('file','issue.json') }}"
+      body: 
+        mainlevel:
+          subkey: finalvalue
+        name: external
+        online: true
+        storage: 
+          blobStoreName: default
+          strictContentTypeValidation: true,
+          writePolicy: allow_once
+        cleanup:
+          policyNames: 
+            - string
+        component:
+          proprietaryComponents: true
+        apt:
+          distribution: bionic
+        aptSigning:
+          keypair: string
+          passphrase: string
       force_basic_auth: yes
       status_code: 201
       body_format: json
