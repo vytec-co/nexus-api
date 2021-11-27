@@ -1,0 +1,16 @@
+---
+aptrepos:
+- url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
+  name: abc
+- url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
+  name: xyz 
+mavenrepos:
+- url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
+  name: maven1 
+- url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
+  name: maven2
+dockerrepos:
+- url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
+  name: docker1
+- url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
+  name: docker2
