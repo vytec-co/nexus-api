@@ -1,7 +1,7 @@
 ---
 - hosts: local
   vars:
-    repositorieslist:
+    aptrepos:
     - url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
       name: external
       id: external
@@ -40,4 +40,4 @@
       force_basic_auth: yes
       status_code: 201
       body_format: json
-    with_items: "{{ repositorieslist }}"
+    with_items: "{{ aptrepos }}"
