@@ -1,2 +1,3 @@
 
 ansible-playbook -i hosts nexus.yml
+https://www.json2yaml.com/
