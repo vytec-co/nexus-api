@@ -11,7 +11,7 @@
   tasks:
   - name: Create a nexus apt repo
     uri:
-      url: {{ item.url }}
+      url: "{{ item.url }}"
       method: POST
       user: admin
       password: admin123
@@ -22,22 +22,22 @@
         mainlevel:
           subkey: finalvalue
         name: "{{ item.name }}"
-        online: true
+        online: "true"
         storage: 
           blobStoreName: default
-          strictContentTypeValidation: true,
+          strictContentTypeValidation: "true"
           writePolicy: allow_once
         cleanup:
           policyNames: 
             - string
         component:
-          proprietaryComponents: true
+          proprietaryComponents: "true"
         apt:
           distribution: bionic
         aptSigning:
           keypair: string
           passphrase: string
-      force_basic_auth: yes
+      force_basic_auth: "yes"
       status_code: 201
       body_format: json
     with_items: "{{ aptrepos }}"
