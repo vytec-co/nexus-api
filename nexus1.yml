@@ -14,7 +14,7 @@
       headers:
         Content-Type: application/json
         Accept: application/json
-      body: "{{ lookup('file','issue.json') }}"
+      body: "{{ lookup('file','apt.json') }}"
       force_basic_auth: yes
       status_code: 201
       body_format: json
