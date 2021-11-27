@@ -12,5 +12,5 @@ mavenrepos:
 dockerrepos:
 - url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
   name: docker1
-- url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
+- url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
   name: docker2

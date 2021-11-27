@@ -6,27 +6,27 @@
     user: admin
     password: admin123
     headers:
-    Content-Type: application/json
-    Accept: application/json
+        Content-Type: application/json
+        Accept: application/json
     body: 
-    mainlevel:
-        subkey: finalvalue
-    name: "{{ item.name }}"
-    online: "true"
-    storage: 
-        blobStoreName: default
-        strictContentTypeValidation: "true"
-        writePolicy: allow_once
-    cleanup:
-        policyNames: 
-        - string
-    component:
-        proprietaryComponents: "true"
-    apt:
-        distribution: bionic
-    aptSigning:
-        keypair: string
-        passphrase: string
+        mainlevel:
+            subkey: finalvalue
+        name: "{{ item.name }}"
+        online: "true"
+        storage: 
+            blobStoreName: default
+            strictContentTypeValidation: "true"
+            writePolicy: allow_once
+        cleanup:
+            policyNames: 
+            - string
+        component:
+            proprietaryComponents: "true"
+        apt:
+            distribution: bionic
+        aptSigning:
+            keypair: string
+            passphrase: string
     force_basic_auth: "yes"
     status_code: 201
     body_format: json
@@ -39,54 +39,24 @@
     user: admin
     password: admin123
     headers:
-    Content-Type: application/json
-    Accept: application/json
+        Content-Type: application/json
+        Accept: application/json
     body: 
-    name: "{{ item.name }}"
-    online: "true"
-    storage:
-        blobStoreName: default
-        strictContentTypeValidation: "true"
-        writePolicy: allow_once
-    cleanup:
-        policyNames:
-        - string
-    component:
-        proprietaryComponents: "true"
-    maven:
-        versionPolicy: MIXED
-        layoutPolicy: STRICT
-        contentDisposition: ATTACHMENT
-    force_basic_auth: "yes"
-    status_code: 201
-    body_format: json
-  with_items: "{{ mavenrepos }}"
-  ignore_errors: "yes"
-- name: Create a nexus maven repo
-  uri:
-    url: "{{ item.url }}"
-    method: POST
-    user: admin
-    password: admin123
-    headers:
-    Content-Type: application/json
-    Accept: application/json
-    body: 
-    name: "{{ item.name }}"
-    online: "true"
-    storage:
-        blobStoreName: default
-        strictContentTypeValidation: "true"
-        writePolicy: allow_once
-    cleanup:
-        policyNames:
-        - string
-    component:
-        proprietaryComponents: "true"
-    maven:
-        versionPolicy: MIXED
-        layoutPolicy: STRICT
-        contentDisposition: ATTACHMENT
+        name: "{{ item.name }}"
+        online: "true"
+        storage:
+            blobStoreName: default
+            strictContentTypeValidation: "true"
+            writePolicy: allow_once
+        cleanup:
+            policyNames:
+            - string
+        component:
+            proprietaryComponents: "true"
+        maven:
+            versionPolicy: MIXED
+            layoutPolicy: STRICT
+            contentDisposition: ATTACHMENT
     force_basic_auth: "yes"
     status_code: 201
     body_format: json
@@ -99,25 +69,25 @@
     user: admin
     password: admin123
     headers:
-    Content-Type: application/json
-    Accept: application/json
+        Content-Type: application/json
+        Accept: application/json
     body: 
-      name: "{{ item.name }}"
-      online: true
-      storage:
-        blobStoreName: default
-        strictContentTypeValidation: true
-        writePolicy: allow_once
-      cleanup:
-        policyNames:
-        - string
-      component:
-        proprietaryComponents: true
-      docker:
-        v1Enabled: false
-        forceBasicAuth: true
-        httpPort: 8082
-        httpsPort: 8083
+        name: "{{ item.name }}"
+        online: "true"
+        storage:
+            blobStoreName: default
+            strictContentTypeValidation: "true"
+            writePolicy: allow_once
+        cleanup:
+            policyNames:
+            - string
+        component:
+            proprietaryComponents: "true"
+        docker:
+            v1Enabled: "false"
+            forceBasicAuth: "true"
+            # httpPort: 8082
+            # httpsPort: 8083
     force_basic_auth: "yes"
     status_code: 201
     body_format: json
