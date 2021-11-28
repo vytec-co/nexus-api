@@ -1,5 +1,5 @@
 {
-    "name": "internal",
+    "name": "{{ item.name }}",
     "online": true,
     "storage": {
       "blobStoreName": "default",
@@ -14,9 +14,11 @@
     "component": {
       "proprietaryComponents": true
     },
-    "maven": {
-      "versionPolicy": "MIXED",
-      "layoutPolicy": "STRICT",
-      "contentDisposition": "ATTACHMENT"
+    "apt": {
+      "distribution": "bionic"
+    },
+    "aptSigning": {
+      "keypair": "string",
+      "passphrase": "string"
     }
   }

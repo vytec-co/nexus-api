@@ -1,5 +1,5 @@
 {
-    "name": "external",
+    "name": "{{ item.name }}",
     "online": true,
     "storage": {
       "blobStoreName": "default",
@@ -14,11 +14,9 @@
     "component": {
       "proprietaryComponents": true
     },
-    "apt": {
-      "distribution": "bionic"
-    },
-    "aptSigning": {
-      "keypair": "string",
-      "passphrase": "string"
+    "maven": {
+      "versionPolicy": "MIXED",
+      "layoutPolicy": "STRICT",
+      "contentDisposition": "ATTACHMENT"
     }
   }
