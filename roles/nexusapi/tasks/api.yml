@@ -22,19 +22,19 @@
   when: repo_get_result.status == "SUCCESS"
 - name: create a template
   template:
-    src: apt.json.j2
-    dest: /tmp/apt.json
-- name: Create a nexus repo
-    uri:
-      url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
-      method: POST
-      user: admin
-      password: admin123
-      headers:
+    src: "{{ item.format }}.json.j2"
+    dest: "/tmp/{{ item.format }}.json"
+- name: Create a repo
+  uri:
+    url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
+    method: POST
+    user: admin
+    password: admin123
+    headers:
         Content-Type: application/json
         Accept: application/json
-      body: "{{ lookup('file','/tmp/apt.json') }}"
-      force_basic_auth: yes
-      status_code: 201
-      body_format: json
-    when: repo_get_result.status == "SUCCESS"
+    body: "{{ lookup('file','/tmp/{{ item.format }}.json') }}"
+    force_basic_auth: yes
+    status_code: 201
+    body_format: json
+  when: repo_get_result.status == "SUCCESS"
