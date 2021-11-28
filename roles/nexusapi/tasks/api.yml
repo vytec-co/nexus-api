@@ -11,15 +11,9 @@
     body_format: json
   register: repo_output
   ignore_errors: "yes"
-- debug:
-    msg: "{{ '{\"status\": \"SUCCESS\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"FAILED\"}' }}"
 - name: Set facts for delete operation results
   set_fact:
     repo_get_result: "{{ '{\"status\": \"SUCCESS\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"FAILED\"}' }}"
-- name: create nexus repo
-  debug:
-    msg: "creating the repo"
-  when: repo_get_result.status == "SUCCESS"
 - name: create a template
   template:
     src: "{{ item.format }}.json.j2"
