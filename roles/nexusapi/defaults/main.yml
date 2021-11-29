@@ -22,7 +22,9 @@ repositories:
   name: docker1
   type: hosted
   format: docker
+  policy: cleanpolicy
 - url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
   name: docker3
   type: hosted
   format: docker
+  policy: cleanpolicy
