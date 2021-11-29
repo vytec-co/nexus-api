@@ -5,7 +5,7 @@ aptrepos:
   type: hosted
   format: apt
 - url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
-  name: xyz 
+  name: xyz
   type: hosted
   format: apt
 mavenrepos:

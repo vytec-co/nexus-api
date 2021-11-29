@@ -12,14 +12,10 @@
   register: repo_output
   ignore_errors: "yes"
 - debug:
-    msg: "{{ '{\"status\": \"SUCCESS\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"FAILED\"}' }}"
-- name: Set facts for delete operation results
+    msg: "{{ '{\"status\": \"NOTEXIST\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"EXIST\"}' }}"
+- name: Set facts for repo_get_result
   set_fact:
-    repo_get_result: "{{ '{\"status\": \"SUCCESS\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"FAILED\"}' }}"
-- name: create nexus repo
-  debug:
-    msg: "creating the repo"
-  when: repo_get_result.status == "SUCCESS"
+    repo_get_result: "{{ '{\"status\": \"NOTEXIST\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"EXIST\"}' }}"
 - name: create a template
   template:
     src: "{{ item.format }}.json.j2"
@@ -37,4 +33,4 @@
     force_basic_auth: yes
     status_code: 201
     body_format: json
-  when: repo_get_result.status == "SUCCESS"
+  when: repo_get_result.status == "NOTEXIST"
