@@ -28,3 +28,4 @@ repositories:
   type: hosted
   format: docker
   policy: cleanpolicy
+  blobStore: xyz

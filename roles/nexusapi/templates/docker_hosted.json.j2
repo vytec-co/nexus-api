@@ -2,7 +2,7 @@
   "name": "{{ item.name }}",
   "online": true,
   "storage": {
-    "blobStoreName": "default",
+    "blobStoreName": "{{ item.blobStore|default('default') }}",
     "strictContentTypeValidation": true,
     "writePolicy": "allow_once"
   },
