@@ -29,3 +29,4 @@ repositories:
   format: docker
   policy: cleanpolicy
   blobStore: xyz
+  members: v1,v2
