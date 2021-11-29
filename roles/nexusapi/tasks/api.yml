@@ -29,7 +29,7 @@
     headers:
         Content-Type: application/json
         Accept: application/json
-    body: "{{ lookup('file','/tmp/{{ item.format }}.json') }}"
+    body: "{{ lookup('file','/tmp/{{ item.format }}_{{ item.type }}.json') }}"
     force_basic_auth: yes
     status_code: 201
     body_format: json
