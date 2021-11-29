@@ -8,7 +8,7 @@
   },
   "cleanup": {
     "policyNames": [
-      "string"
+      "{{ item.policy if p is not none else 'string' }}"
     ]
   },
   "component": {
