@@ -2,10 +2,4 @@
 
 - name: check and crerate repos for dockerrepos
   include: api.yml
-  with_items: "{{ dockerrepos }}"
-- name: check and crerate repos for mavenrepos
-  include: api.yml
-  with_items: "{{ mavenrepos }}"
-- name: check and crerate repos for aptrepos
-  include: api.yml
-  with_items: "{{ aptrepos }}"
+  with_items: "{{ repositories }}"

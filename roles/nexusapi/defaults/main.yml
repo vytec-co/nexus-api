@@ -1,5 +1,5 @@
 ---
-aptrepos:
+repositories:
 - url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
   name: abc
   type: hosted
@@ -8,7 +8,6 @@ aptrepos:
   name: xyz
   type: hosted
   format: apt
-mavenrepos:
 - url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
   name: maven1 
   type: hosted
@@ -17,7 +16,6 @@ mavenrepos:
   name: maven2
   type: hosted
   format: maven2
-dockerrepos:
 - url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
   name: docker1
   type: hosted
