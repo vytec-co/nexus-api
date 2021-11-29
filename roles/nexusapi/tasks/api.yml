@@ -3,8 +3,8 @@
   uri:
     url: "{{ item.url }}/{{ item.name }}"
     method: GET
-    user: admin
-    password: admin123
+    user: "{{ username }}"
+    password: "{{ password }}"
     headers:
         Accept: application/json
     force_basic_auth: "yes"
@@ -22,10 +22,10 @@
     dest: "/tmp/{{ item.format }}_{{ item.type }}.json"
 - name: Create a repo
   uri:
-    url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
+    url: "{{ item.url }}"
     method: POST
-    user: admin
-    password: admin123
+    user: "{{ username }}"
+    password: "{{ password }}"
     headers:
         Content-Type: application/json
         Accept: application/json
