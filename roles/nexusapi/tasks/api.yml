@@ -18,8 +18,8 @@
     repo_get_result: "{{ '{\"status\": \"NOTEXIST\"}' if (repo_output['json'] == 'Repository not found') else '{\"status\" : \"EXIST\"}' }}"
 - name: create a template
   template:
-    src: "{{ item.format }}.json.j2"
-    dest: "/tmp/{{ item.format }}.json"
+    src: "{{ item.type }}.json.j2"
+    dest: "/tmp/{{ item.format }}_{{ item.type }}.json"
 - name: Create a repo
   uri:
     url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
