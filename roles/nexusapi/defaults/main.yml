@@ -1,6 +1,6 @@
 ---
-username: admin
-password: admin123
+nexus_username: admin
+Nexus_password: admin123
 repositories:
 - url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
   name: abc

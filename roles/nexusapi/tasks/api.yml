@@ -3,8 +3,8 @@
   uri:
     url: "{{ item.url }}/{{ item.name }}"
     method: GET
-    user: "{{ username }}"
-    password: "{{ password }}"
+    user: "{{ nexus_username }}"
+    password: "{{ nexus_password }}"
     headers:
         Accept: application/json
     force_basic_auth: "yes"
@@ -24,8 +24,8 @@
   uri:
     url: "{{ item.url }}"
     method: POST
-    user: "{{ username }}"
-    password: "{{ password }}"
+    user: "{{ nexus_username }}"
+    password: "{{ nexus_password }}"
     headers:
         Content-Type: application/json
         Accept: application/json
