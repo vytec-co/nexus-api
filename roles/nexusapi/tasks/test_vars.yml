@@ -1,1 +1,32 @@
-dev_vars.y
+---
+nexus_username: admin
+Nexus_password: admin123
+repositories:
+- url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
+  name: abc
+  type: hosted
+  format: apt
+- url: http://localhost:8081/service/rest/v1/repositories/apt/hosted
+  name: xyz
+  type: hosted
+  format: apt
+- url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
+  name: maven1 
+  type: hosted
+  format: maven2
+- url: http://localhost:8081/service/rest/v1/repositories/maven/hosted
+  name: maven2
+  type: hosted
+  format: maven2
+- url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
+  name: docker1
+  type: hosted
+  format: docker
+  policy: cleanpolicy
+- url: http://localhost:8081/service/rest/v1/repositories/docker/hosted
+  name: docker3
+  type: hosted
+  format: docker
+  policy: cleanpolicy
+  blobStore: xyz
+  members: v1,v2
