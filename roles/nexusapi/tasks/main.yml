@@ -1,5 +1,6 @@
 ---
-
+- name: include default step variables
+  include_vars: "{{ env }}_vars.yml"
 - name: check and crerate repos for dockerrepos
   include: api.yml
   with_items: "{{ repositories }}"
